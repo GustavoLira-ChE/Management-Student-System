@@ -23,3 +23,7 @@ logging:
     com.memorynotfound: DEBUG
     org.springframework.web: INFO
     org.springframework.security: INFO
+
+app:
+  jwtSecret: "PrivateKeyasdjklsakjkldjaslkjdlkasjdlkjaslkdjaslkjdlkjaslkdjklsajdkljaslk"
+  jwtExpirationMs: 86400000

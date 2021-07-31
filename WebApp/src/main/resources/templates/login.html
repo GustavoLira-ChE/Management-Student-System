@@ -11,8 +11,8 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h1>Login page</h1>
-            <form th:action="@{/login}" method="post">
-                <div th:if="${param.error}">
+            <form th:action="@{/signin}" method="post">
+                <div th:if="${error}">
                     <div class="alert alert-danger">
                         Invalid username or password.
                     </div>
