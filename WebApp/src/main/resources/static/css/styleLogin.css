@@ -1,0 +1,45 @@
+/*Main style*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* Style for navigator bar*/
+#menu-bar{
+    max-width: 1000px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(166, 45%, 14%);
+    position: relative;
+    top: -2%;
+    color:lavenderblush;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#first-nav-bar li{
+    display: inline-block;
+    padding: 0px 8px;
+}
+#first-nav-bar{
+    float: right;
+}
+.logo{
+    float: left;
+}
+.project-name{
+    margin: 0 auto;
+    float: right;
+}
+li:hover{
+    color: rgb(160, 160, 12);
+}
