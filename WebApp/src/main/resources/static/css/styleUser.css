@@ -43,46 +43,40 @@ a{
 li:hover{
     color: rgb(160, 160, 12);
 }
-/* Homa */
+/* Close sesion */
 .return{
     max-width: 1000px;
     margin: 0 auto;
 }
-/* Form */
-#login{
-    background-image:url(https://www.magisnet.com/wp-content/uploads/2021/04/Streamers.jpg);
+/* Panel */
+#user-panel{
     max-width: 1000px;
     margin: 0 auto;
-    height: 350px;
 }
-#login h3{
-    text-align: center;
+.back-img{
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/433/313/small/xvs4_umqr_170903.jpg);
+    height: 70px;
 }
-#form-shape{
-    width: 200px;
-    padding: 8px;
-    border: 1px solid grey;
-    background-color:rgba(160, 160, 12, 0.5);
-    /* IMPORTANTE */
-    width: 200px;
-    margin: 0 auto;
-}
-.buttom-submit{
+.title-conf{
     width: fit-content;
-    border: 1px grey solid;
-    background-color: honeydew;
-    padding: 2px 4px;
-    margin: 0 auto;
+    background-color: whitesmoke;
+    margin: 30px auto 0;
 }
-.buttom-submit:hover{
-    width: fit-content;
-    border: 1px black solid;
-    background-color: rgb(201, 201, 201);
-    padding: 2px 4px;
+.container-panel{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.section-panel{
+    width: 150px;
+    height: 200px;
+    background-color: hsl(166, 45%, 14%);
+    color: white;
 }
 
 footer{
     max-width: 1000px;
+    height: 80px;
     margin: 10px auto;
     text-align: center;
     color:lavenderblush;
