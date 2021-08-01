@@ -99,4 +99,16 @@ public class UserDetailsImpl implements UserDetails {
         UserDetailsImpl user = (UserDetailsImpl) o;
         return Objects.equals(id, user.id);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("UserDetailsImpl{");
+        sb.append("id=").append(id);
+        sb.append(", username='").append(username).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", authorities=").append(authorities);
+        sb.append('}');
+        return sb.toString();
+    }
 }
