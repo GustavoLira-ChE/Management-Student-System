@@ -1,7 +1,8 @@
 spring:
   datasource:
-    url: "jdbc:mysql://localhost:3306/testdb?useSSL=false"
-    username: "root"
+    url: "jdbc:mysql://servidorbasededatos1.mysql.database.azure.com:3306/testdb?useSSL=false"
+    username: "danielmp599@servidorbasededatos1"
+    
   jpa:
     properties:
       hibernate:
