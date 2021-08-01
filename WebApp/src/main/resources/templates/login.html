@@ -1,60 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/styleLogin.css">
-    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/styleLogin.css}">
+    <title th:text="${title}"></title>
 </head>
 <body>
-    <div id="menu-bar">
-        <div class="menuBarItem logo">
-            <h2>Logo</h2>
-            <img src="" alt="">
+<div th:replace="fragments/_menu.html"></div>
+<div class="return">
+    <h4><a href="./index.html">Home</a></h4>
+</div>
+<div id="login">
+    <h3>Iniciar sesión</h3>
+    <div id="container-form">
+        <div th:if="${#request.getParameter('error') == 'true'}" id="error">
+            Error al Iniciar sesion!!
+            </br>
+
+            Razon:
+            <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+                  th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Sumario estatico
+            </span>
         </div>
-        <div class="menuBarItem project-name">
-            <h1>Nombre del proyecto</h1>
-        </div>
-        <div class="menuBarItem">
-            <nav>
-                <ul id="first-nav-bar">
-                    <li><a href="">Ayuda</a></li>
-                </ul>
-            </nav>
-        </div>
+        <form name='f' th:action="@{/j_spring_security_check}" method='POST' id="form-shape">
+            <!-- Username -->
+            <label for="name">Usuario:</label>
+            <input type='text' name='username' value=''>
+            <!-- Password -->
+            <label for="username">Contraseña:</label>
+            <input type='password' name='password'>
+            <p><a href="#">¿Olvidaste tu contraseña?</a>
+            <div id="lower">
+                <!-- Submit Button -->
+            <input class="buttom-submit" name="submit" type="submit" value="Login">
+            </div>
+        </form>
+        <div class="center"></div>
     </div>
-    <div class="return">
-        <h4><a href="./index.html">Home</a></h4>
-    </div>
-    <div id="login">
-        <h3>Iniciar sesión</h3>
-        <div id="container-form">
-            <div class="center"></div>
-            <form id = "form-shape">
-                <!-- Username -->
-                <label for="name">Usuario:</label>
-                <input type="name">
-                <!-- Password -->
-                <label for="username">Contraseña:</label>
-                <input type="password">
-                <p><a href="#">¿Olvidaste tu contraseña?</a>
-                <div id="lower">
-                    <input type="checkbox"><label class="check" for="checkbox">Mentenerme activo</label>
-                    <!-- Submit Button -->
-                    <div class="buttom-submit">
-                        <a href="./userpage.html">Login</a>
-                    </div>
-                    <!-- <input type="submit" value="Login" href="./userpage.html"> -->
-                </div>
-            </form>
-            <div class="center"></div>
-        </div>
-    </div>
-    <footer>
-        <h1><a href="">Contacto</a></h1>
-    </footer>
-    <script>
-    </script>
+</div>
+<footer th:replace="fragments/_footer"></footer>
+<script>
+</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import com.github.innovaccionvirtual.models.User;
 import com.github.innovaccionvirtual.security.services.UserDetailsImpl;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,17 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping(value = "admin")
+    @GetMapping("/panel")
+    public String panelPage(Model model, Principal principal) {
+        UserDetailsImpl user = ((UserDetailsImpl) ((Authentication) principal).getPrincipal());
+        if (user.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER"))) {
+            model.addAttribute("user", ((UserDetailsImpl) ((Authentication) principal).getPrincipal()));
+            return "userpage";
+        }
+        return "redirect:/";
+    }
+
+    @GetMapping(value = "/admin")
     public String adminPage(Model model, Principal principal) {
         UserDetailsImpl user = ((UserDetailsImpl) ((Authentication) principal).getPrincipal());
         model.addAttribute("userInfo", user.toString());
@@ -33,13 +44,14 @@ public class MainController {
 
     @GetMapping("/login")
     public String loginPage(Model model) {
-        return "loginPage";
+        model.addAttribute("isLoginPage", true);
+        model.addAttribute("title", "Iniciar sesion");
+        return "login";
     }
 
     @GetMapping("/logoutSuccessful")
     public String logoutSuccessfulPage(Model model) {
-        model.addAttribute("title", "Logout");
-        return "logoutSuccessfulPage";
+        return "redirect:/";
     }
 
     @GetMapping("/userInfo")

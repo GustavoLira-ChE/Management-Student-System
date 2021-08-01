@@ -1,6 +1,9 @@
 package com.github.innovaccionvirtual.web;
 
+import com.github.innovaccionvirtual.security.services.UserDetailsImpl;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +18,7 @@ public class LoggingAccessSuccessHandler implements AuthenticationSuccessHandler
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException, ServletException {
-        authentication.getPrincipal();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     }
+
 }

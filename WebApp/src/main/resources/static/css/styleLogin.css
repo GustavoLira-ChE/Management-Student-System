@@ -55,6 +55,15 @@ li:hover{
     margin: 0 auto;
     height: 350px;
 }
+#error{
+    background-color:rgba(255 255 255 0.74);
+    width: 200px;
+    padding: 8px;
+    border: 1px solid grey;
+    text-align: center;
+    margin: 0 auto;
+}
+
 #login h3{
     text-align: center;
 }
