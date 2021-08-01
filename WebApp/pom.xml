@@ -16,10 +16,7 @@
   <description>WebApp</description>  
   <properties> 
     <java.version>11</java.version>
-    <!-- upgrade to thymeleaf version 3 -->
-    <thymeleaf.version>3.0.8.RELEASE</thymeleaf.version>
-    <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
-    <thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
+
   </properties>  
   <dependencies> 
     <dependency> 
