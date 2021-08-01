@@ -1,0 +1,84 @@
+/*Main style*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* Style for navigator bar*/
+#menu-bar{
+    max-width: 1000px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(166, 45%, 14%);
+    position: relative;
+    top: -2%;
+    color:lavenderblush;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#first-nav-bar li{
+    display: inline-block;
+    padding: 0px 8px;
+}
+#first-nav-bar{
+    float: right;
+}
+.logo{
+    float: left;
+}
+.project-name{
+    margin: 0 auto;
+    float: right;
+}
+li:hover{
+    color: rgb(160, 160, 12);
+}
+/* Close sesion */
+.return{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Panel */
+#user-panel{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.back-img{
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/433/313/small/xvs4_umqr_170903.jpg);
+    height: 70px;
+}
+.title-conf{
+    width: fit-content;
+    background-color: whitesmoke;
+    margin: 30px auto 0;
+}
+.container-panel{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.section-panel{
+    width: 150px;
+    height: 200px;
+    background-color: hsl(166, 45%, 14%);
+    color: white;
+}
+
+footer{
+    max-width: 1000px;
+    height: 80px;
+    margin: 10px auto;
+    text-align: center;
+    color:lavenderblush;
+    background-color:  hsl(166, 45%, 14%);
+}

@@ -1,0 +1,90 @@
+/*Main style*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/* Style for navigator bar*/
+#menu-bar{
+    max-width: 1000px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: hsl(166, 45%, 14%);
+    position: relative;
+    top: -2%;
+    color:lavenderblush;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#first-nav-bar li{
+    display: inline-block;
+    padding: 0px 8px;
+}
+#first-nav-bar{
+    float: right;
+}
+.logo{
+    float: left;
+}
+.project-name{
+    margin: 0 auto;
+    float: right;
+}
+li:hover{
+    color: rgb(160, 160, 12);
+}
+/* Homa */
+.return{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Form */
+#login{
+    background-image:url(https://www.magisnet.com/wp-content/uploads/2021/04/Streamers.jpg);
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 350px;
+}
+#login h3{
+    text-align: center;
+}
+#form-shape{
+    width: 200px;
+    padding: 8px;
+    border: 1px solid grey;
+    background-color:rgba(160, 160, 12, 0.5);
+    /* IMPORTANTE */
+    width: 200px;
+    margin: 0 auto;
+}
+.buttom-submit{
+    width: fit-content;
+    border: 1px grey solid;
+    background-color: honeydew;
+    padding: 2px 4px;
+    margin: 0 auto;
+}
+.buttom-submit:hover{
+    width: fit-content;
+    border: 1px black solid;
+    background-color: rgb(201, 201, 201);
+    padding: 2px 4px;
+}
+
+footer{
+    max-width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+    color:lavenderblush;
+    background-color:  hsl(166, 45%, 14%);
+}
