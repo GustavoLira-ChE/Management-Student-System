@@ -14,14 +14,25 @@ html, body{
 img {
     vertical-align: middle;
     max-width: 1000px;
+    max-height: 300px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 /* Style for navigator bar*/
 #menu-bar{
     max-width: 1000px;
     overflow: hidden;
-    border: 2px dotted;
     margin-left: auto;
     margin-right: auto;
+    background-color: hsl(166, 45%, 14%);
+    position: relative;
+    top: -2%;
+    color:lavenderblush;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 #first-nav-bar li{
     display: inline-block;
@@ -30,10 +41,20 @@ img {
 #first-nav-bar{
     float: right;
 }
+.logo{
+    float: left;
+}
+.project-name{
+    margin: 0 auto;
+    float: right;
+}
+li:hover{
+    color: rgb(160, 160, 12);
+}
 
 /* Slideshow container */
 .slideshow-container{
-    max-width: 10000px;
+    max-width: 1000px;
     position: relative;
     margin: 0 auto;
 }
@@ -42,9 +63,11 @@ img {
     color: #f2f2f2;
     font-size: 15px;
     padding: 8px 16px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
+    position: relative;
+    top: -100px;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: hsla(60, 7%, 22%, 0.8);
     text-align: center;
 }
 /* Dot indicator */
@@ -52,11 +75,10 @@ img {
     /* cursor: pointer; */
     height: 15px;
     width: 15px;
-    margin: 0 2px;
-    background-color: hsl(0deg, 0, 0.733);
+    margin: 10px 10px;
     border-radius: 50%;
     display: inline-block;
-    transition:0.6s ease;
+    background-color: hsl(170, 5%, 22%);
 }
 .active, .dot:hover {
     background-color: #717171;
@@ -82,4 +104,26 @@ to {opacity: 1}
 .text {font-size: 11px}
 }
 
-
+/* Login */
+#objetive{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#objetive h3{
+    text-align: center;
+    font-size: 32px;
+}
+.container-objetive{
+    display: flex;
+}
+.objetive-content{
+    width: 0 auto;
+    background-color: #717171;
+}
+footer{
+    max-width: 1000px;
+    margin: -20px auto;
+    text-align: center;
+    color:lavenderblush;
+    background-color:  hsl(166, 45%, 14%);
+}
