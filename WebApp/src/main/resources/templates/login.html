@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/login/styleLogin.css">
+    <link rel="stylesheet" href="../static/css/styleLogin.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,16 +19,31 @@
         <div class="menuBarItem">
             <nav>
                 <ul id="first-nav-bar">
-                    <li><a href="">Iniciar sesión</a></li>
-                    <li><a href="">Registrarse</a></li>
+                    <li><a href="">Ayuda</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    <div id="objetive">
-        <h3>Objetivos del proyecto</h3>
-        <div class="container-objetive">
-            <div class="objetive-content"></div>
+    <div class="return">
+        <h4><a href="./index.html">Home</a></h4>
+    </div>
+    <div id="login">
+        <h3>Iniciar sesión</h3>
+        <div id="container">
+            <form id = "form-shape">
+                <!-- Username -->
+                <label for="name">Usuario:</label>
+                <input type="name">
+                <!-- Password -->
+                <label for="username">Contraseña:</label>
+                <input type="password">
+                <p><a href="#">¿Olvidaste tu contraseña?</a>
+                <div id="lower">
+                    <input type="checkbox"><label class="check" for="checkbox">Mentenerme activo</label>
+                    <!-- Submit Button -->
+                    <input type="submit" value="Login">
+                </div>
+            </form>       
         </div>
     </div>
     <footer>
