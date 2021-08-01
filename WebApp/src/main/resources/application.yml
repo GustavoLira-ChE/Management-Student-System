@@ -1,13 +1,18 @@
+server:
+  port: 8081
 spring:
   datasource:
     url: "jdbc:sqlserver://hackaton-management-app.database.windows.net:1433;database=hackaton;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
     username: "danild@hackaton-management-app"
     password: "Summerhack123"
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
     
   jpa:
+    show-sql: true
     properties:
       hibernate:
         ddl-auto: update
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
   thymeleaf:
     cache: false
     check-template: true
