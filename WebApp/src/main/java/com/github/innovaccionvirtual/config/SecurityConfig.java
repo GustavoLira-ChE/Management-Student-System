@@ -50,7 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().antMatchers("/userInfo").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 
-        http.authorizeRequests().antMatchers("/panel").access("hasAnyRole('ROLE_USER', 'ROLE_TEACHER', 'ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/panel", "/profile/**").access("hasAnyRole('ROLE_USER', 'ROLE_TEACHER', "
+                + "'ROLE_ADMIN')");
 
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 

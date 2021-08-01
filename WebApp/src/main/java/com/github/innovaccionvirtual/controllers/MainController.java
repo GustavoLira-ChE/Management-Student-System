@@ -34,14 +34,6 @@ public class MainController {
         return "redirect:/";
     }
 
-    @GetMapping(value = "/admin")
-    public String adminPage(Model model, Principal principal) {
-        UserDetailsImpl user = ((UserDetailsImpl) ((Authentication) principal).getPrincipal());
-        model.addAttribute("userInfo", user.toString());
-
-        return "adminPage";
-    }
-
     @GetMapping("/login")
     public String loginPage(Model model) {
         model.addAttribute("isLoginPage", true);
@@ -54,17 +46,30 @@ public class MainController {
         return "redirect:/";
     }
 
-    @GetMapping("/userInfo")
-    public String userInfo(Model model, Principal principal) {
-        String userName = principal.getName();
+    @GetMapping("/profile/school")
+    public String schoolPage(Model model, Principal principal) {
+        UserDetailsImpl user = ((UserDetailsImpl) ((Authentication) principal).getPrincipal());
+        model.addAttribute("userInfo", user.toString());
+        model.addAttribute("inst-page", "google.com");
+        model.addAttribute("inst-name", "Nombre de la institución: Escuela Publica Secundaria");
+        model.addAttribute("user", ((UserDetailsImpl) ((Authentication) principal).getPrincipal()));
+        return "schoolardata";
+    }
 
-        System.out.println("User Name: " + userName);
+    @GetMapping("/profile")
+    public String profilePage(Model model, Principal principal) {
+        model.addAttribute("user", ((UserDetailsImpl) ((Authentication) principal).getPrincipal()));
 
-        UserDetailsImpl loginedUser = (UserDetailsImpl) ((Authentication) principal).getPrincipal();
+        return "personaldata";
+    }
 
-        model.addAttribute("userInfo", loginedUser.toString());
+    @GetMapping("/advisory")
+    public String advisory(Model model, Principal principal) {
+        if (principal != null) {
+            model.addAttribute("user", ((UserDetailsImpl) ((Authentication) principal).getPrincipal()));
+        }
 
-        return "userInfoPage";
+        return "advisory";
     }
 
     @GetMapping("/403")
@@ -82,6 +87,8 @@ public class MainController {
 
         }
 
-        return "403Page";
+        return "denegado";
     }
+
+
 }

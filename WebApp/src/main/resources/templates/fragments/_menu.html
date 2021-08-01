@@ -12,7 +12,7 @@
                 <li th:if="${user == null and isLoginPage == null}"><a th:href="@{/login}">Iniciar sesión</a></li>
                 <li th:if="${user == null}"><a href="">Registrarse</a></li>
 
-                <li th:if="${user != null and isLoginPage == null}"><a th:href="@{/userInfo}" th:text="${user.username}"></a></li>
+                <li th:if="${user != null and isLoginPage == null}"><a th:href="@{/profile}" th:text="${user.username}"></a></li>
                 <li th:if="${user != null and isLoginPage == null}"><a th:href="@{/logout}">Cerrar Sesion</a></li>
 
                 <li th:if="${isLoginPage}"><a th:href="@{/login}">Ayuda</a></li>

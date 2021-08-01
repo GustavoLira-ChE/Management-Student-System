@@ -4,28 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/stylepersonaldata.css">
-    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/stylepersonaldata.css}">
+    <title>Datos escolares</title>
 </head>
 <body>
-    <!-- Esto se queda en todas las páginas -->
-    <div id="menu-bar">
-        <div class="menuBarItem logo">
-            <h2>Logo</h2>
-            <img src="" alt="">
-        </div>
-        <div class="menuBarItem project-name">
-            <h1>Nombre del proyecto</h1>
-        </div>
-        <div class="menuBarItem">
-            <nav>
-                <ul id="first-nav-bar">
-                    <li><a href="">Ayuda</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- Esto se queda en todas las páginas -->
+<div th:replace="fragments/_menu.html"></div>
     <div class="return">
         <h4><a href="./userpage.html">Panel de usuario</a></h4>
     </div>
@@ -41,6 +24,9 @@
             <div class="section-panel data">
                 <p>
                     <strong>Nombre de la institución:</strong> <br>
+                </p>
+
+                <p>
                     Escuela Primario/secundaria #999 "Titulo de la escuela" Matutino/Vespertino
                     Telefono de la escuela: ## ## ## ## <br>
                     Dirección: p. sherman 42 wallaby way. Sidney <br>
@@ -48,9 +34,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <h1><a href="">Contacto</a></h1>
-    </footer>
+<footer th:replace="fragments/_footer"></footer>
     <script>
     </script>
 </body>
