@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: "jdbc:sqlserver://hackaton-management-app.database.windows.net:1433;database=hackaton;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
-    username: "spring@hackaton-management-app"
+    username: "danild@hackaton-management-app"
     password: "Summerhack123"
     
   jpa:
