@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Setting Service to find User in the database.
         // And Setting PassswordEncoder
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+        //auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 
     }
     @Override
@@ -63,5 +63,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+    }
+    
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("student").password("{noop}123").roles("USER")
+                .and()
+                .withUser("teacher").password("{noop}password").roles("MANAGER")
+                .and()
+                .withUser("admin").password("{noop}password").roles("ADMIN");
     }
 }
