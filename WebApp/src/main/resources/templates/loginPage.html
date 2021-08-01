@@ -1,11 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Login</title>
-</head>
+<head th:replace="fragments/_header.html"></head>
 <body>
-<!-- Include _menu.html -->
-<th:block th:include="/_menu"></th:block>
+<div th:replace="fragments/_menu.html"></div>
 
 <h1>Login</h1>
 
@@ -46,5 +43,5 @@ Username/pass:
 </ul>
 
 </body>
-
+<footer th:replace="fragments/_footer"></footer>
 </html>

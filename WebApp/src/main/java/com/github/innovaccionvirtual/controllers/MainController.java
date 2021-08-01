@@ -14,11 +14,13 @@ import java.security.Principal;
 public class MainController {
 
     @GetMapping(value = {"/", "/welcome"})
-    public String welcomePage(Model model) {
-        model.addAttribute("title", "Welcome");
-        model.addAttribute("message", "This is welcome page!");
+    public String welcomePage(Model model, Principal principal) {
+        if (principal != null) {
+            model.addAttribute("user", ((UserDetailsImpl) ((Authentication) principal).getPrincipal()));
+        }
 
-        return "welcomePage";
+        model.addAttribute("title", "Bienvenido!");
+        return "index";
     }
 
     @GetMapping(value = "admin")

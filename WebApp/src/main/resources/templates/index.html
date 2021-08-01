@@ -2,31 +2,9 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Document</title>
-</head>
+<head th:replace="fragments/_header.html"></head>
 <body>
-    <div id="menu-bar">
-        <div class="menuBarItem logo">
-            <h2>Logo</h2>
-            <img src="" alt="">
-        </div>
-        <div class="menuBarItem project-name">
-            <h1>Nombre del proyecto</h1>
-        </div>
-        <div class="menuBarItem">
-            <nav>
-                <ul id="first-nav-bar">
-                    <li><a href="">Iniciar sesión</a></li>
-                    <li><a href="">Registrarse</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <div th:replace="fragments/_menu.html"></div>
     <div class="slideshow-container">
         <div class ="mySlides fade">
             <center>
@@ -58,9 +36,7 @@
             <div class="objetive-content"></div>
         </div>
     </div>
-    <footer>
-        <h1><a href="">Contacto</a></h1>
-    </footer>
+    <footer th:replace="fragments/_footer"></footer>
     <script>
         function showSlides(n) {
           var i;

@@ -1,0 +1,20 @@
+<div xmlns:th="http://www.thymeleaf.org" id="menu-bar">
+    <div class="menuBarItem logo">
+        <h2>Logo</h2>
+        <img src="" alt="">
+    </div>
+    <div class="menuBarItem project-name">
+        <h1>Nombre del proyecto</h1>
+    </div>
+    <div class="menuBarItem">
+        <nav>
+            <ul id="first-nav-bar">
+                <li th:if="${user} == null"><a th:href="@{/login}">Iniciar sesión</a></li>
+                <li th:if="${user} == null"><a href="">Registrarse</a></li>
+
+                <li th:if="${user} != null"><a th:href="@{/userInfo}" th:text="${user.username}"></a></li>
+                <li th:if="${user} != null"><a th:href="@{/logout}">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
